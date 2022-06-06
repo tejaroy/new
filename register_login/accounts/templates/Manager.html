@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table,tr,td,th{
+    border: 1px solid black;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Manager data</h1>
+<hr>
+<form method="post">
+{% csrf_token %}
+    {% for field in form %}
+        {{ field.label }}{{ field }}
+    {% endfor %}<br><br><br><br>
+<input type="submit" name="submit">
+<hr>
+</form>
+<table style="width: 50%">
+    <tr>
+        <th>username</th>
+        <th>employee</th>
+        <th>password</th>
+        <th>confirm_password</th>
+
+    </tr>
+    {% for man in man_list %}
+    <tr>
+        <td>{{ man.username}} </td>
+        <td>{{ man.employee}}</td>
+        <td>{{ man.password}} </td>
+        <td>{{ man.confirm_password}} </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+
+</body>
+</html>
